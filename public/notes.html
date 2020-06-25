@@ -14,8 +14,7 @@
 
 <body>
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Note Taker
-    </a>
+    <a class="navbar-brand" href="/">Note Taker</a>
     <div class="icons">
       <i class="fas fa-save text-light save-note"></i>
       <i class="fas fa-pen text-light new-note"></i>
@@ -23,16 +22,26 @@
   </nav>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-4 list-container">
-        <div class="card">
-          <ul class="list-group">
-          </ul>
-        </div>
-      </div>
-      <div class="col-8">
-        <input class="note-title" placeholder="Note Title" maxlength="28" type="text">
-        <textarea class="note-textarea" placeholder="Note Text"></textarea>
-      </div>
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Saved Notes</th>
+            <th scope="col">Create a New Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <th scope="row">
+              <input type="text" class="form-control" placeholder="Note Title" aria-label="Note Title" aria-describedby="basic-addon1">
+              <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Note Text" rows="3"></textarea>
+              </div>
+            </th>  
+  
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

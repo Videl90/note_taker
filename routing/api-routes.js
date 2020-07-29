@@ -1,23 +1,26 @@
-var db = require('../db/db.json');
+var dbNotes = require('../db/db.json');
+var fs = require ("fs");
+console.log(dbNotes);
 
-module.exports = function (app){
-    app.get('/api/notes', function (req, res){
-        fs.readFile('../db/db.json'), function (err, data) {
-            const jsonData = JSON.parse(data);
-            console.log("Data: ", data);
-            res.json(jsonData);
-        };
-       
+module.exports = function (app) {
+
+    app.get('/api/notes', (req, res) => {
+        res.json(dbNotes);
+        console.log(dbNotes);
     });
 
-    app.post('api/notes', function (req, res){
-        const data = req.body
-        console.log(JSON.stringify(data))
-        fs.writeFile("../db/db.json"), data, function (err, data) {
-            if(err) throw err;
-            console.log(data);
-        db.push(req.body);
-        res.json(db);    
-        }
+    app.post('/api/notes', (req, res) => {
+        let newNote = req.body
+        let noteNum = dbNotes.length + 1;
+        newNote.id = noteNum;
+
+        fs.readFile(dbNotes, (err, data) => {
+            db.push(newNote);
+            res.send(dbNotes);
+        })
     });
+
+    app.delete('/api/notes/:id', function(req, data){
+        
+    })
 }

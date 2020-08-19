@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .save-note {
@@ -15,8 +16,36 @@ html, body {
   cursor: pointer;
 }
 
+
+.navbar{
+  background-color: #2e3342;
+}
+
+.navbar-brand{
+  color: #e0b1d0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.display-4, .mt-4{
+  color: #2e3342;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-lg{
+  background-color:#e0b1d0!important;
+  color:#2e3342!important;
+  font-weight: bold!important;
+  border-color: #e0b1d0!important;
+}
+
+.btn-lg:hover{
+  background-color:#2e3342!important;
+  color:#e0b1d0!important;
+  font-weight: bold!important;
+  border-color: #2e3342!important;
+}
 .note-textarea, .note-title {
-  color: #000000;
+  color: #2e3342;
   width: 100%;
   outline: none;
   border: none;
@@ -67,4 +96,16 @@ html, body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+.new-note {
+  color: #e0b1d0!important;
+}
+
+.save-note {
+  color: #e0b1d0!important;
+}
+
+.delete-note{
+  color: #c54979!important;
 }
